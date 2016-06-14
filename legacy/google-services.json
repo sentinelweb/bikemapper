@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "192153102151",
+    "project_id": "bikemapper-834d"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:192153102151:android:e3c84107ab13a6f5",
+        "android_client_info": {
+          "package_name": "co.uk.sentinelweb.bikemapper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQDz5a82BWWsF673kjB6KjLMcdl1h5mNc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

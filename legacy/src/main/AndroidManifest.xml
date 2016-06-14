@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="co.uk.sentinelweb.bikemapper"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <application android:icon="@drawable/icon"
+                 android:label="@string/app_name">
+        <activity android:name="net.robmunro.gpstest.LocationTestActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <uses-library android:name="com.google.android.maps"/>
+        <service android:name="net.robmunro.gpstest.RadarService"></service>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDQDz5a82BWWsF673kjB6KjLMcdl1h5mNc"/>
+        <!--android:apiKey="0VztMCrP16Ttk-6QxMwI7sumUYxfLLKaCpjij_Q"-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <!-- <activity android:name="CompassDemo"></activity> -->
+    </application>
+    <uses-sdk android:minSdkVersion="3"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+</manifest> 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<drawable name="transparent_background">#00000000</drawable>
+ 	<drawable name="translucent_background">#e0000000</drawable>
+ 	<drawable name="indicator_red">#aaff0000</drawable>
+ 	<drawable name="indicator_green">#aa00ff00</drawable>
+ 	<drawable name="indicator_blue">#aa0000ff</drawable>
+ 	<drawable name="indicator_orange">#aaff8800</drawable>
+ 	<drawable name="indicator_yellow">#aaffff00</drawable>
+ 	<drawable name="indicator_off">#88000000</drawable>
+</resources>

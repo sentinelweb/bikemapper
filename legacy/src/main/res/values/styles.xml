@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<style name="Theme" parent="android:Theme">
+	</style>
+	<!-- A theme that has a translucent background.  Here we explicitly specify
+	        that this theme is to inherit from the system's translucent theme,
+	        which sets up various attributes correctly.. -->
+	<style name="Theme.Translucent">
+	    <item name="android:windowIsTranslucent">true</item>
+	    <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+	    <item name="android:windowBackground">@drawable/translucent_background</item> 
+	    <item name="android:windowNoTitle">true</item>
+	   <item name="android:colorForeground">#fff</item>
+	</style>
+	<style name="CustomWindowTitleBackground">
+	     <item name="android:background">#323331</item>
+	</style>
+	<style name="TitleTheme" parent="android:Theme">
+	    <item name="android:windowTitleSize">40dp</item>
+	    <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+	</style>
+	<style name="Label">
+		<item name="android:textColor">#ffffff</item> 
+	</style>
+	
+	<style name="Container" >
+	 <item name="android:background">@drawable/bg_searchbar</item>  
+	 <item name="android:padding">3dp</item>
+	</style>
+	<style name="SearchBar" parent="Container">
+	</style>
+</resources>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/mainlayout"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <com.google.android.gms.maps.MapView android:id="@+id/mapview"
+                                         android:layout_width="fill_parent"
+                                         android:layout_height="fill_parent"
+                                         android:clickable="true"/>
+
+    <net.robmunro.gpstest.ui.CompassView
+        android:id="@+id/compass"
+        android:clickable="true"
+        android:layout_height="100px"
+        android:layout_width="100px"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="#00000000"
+        android:inputType="text|textFilter"
+        android:imeOptions="actionDone"
+        android:selectAllOnFocus="true"/>
+    <ImageView android:id="@+id/light"
+               android:layout_height="20dp"
+               android:layout_width="20dp"
+               android:layout_alignParentRight="true"
+               android:src="@drawable/indicator_red"
+               android:layout_above="@+id/compass"></ImageView>
+    <RelativeLayout android:orientation="vertical"
+                    android:layout_alignParentTop="true"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/SearchBar"
+                    android:id="@+id/search_bar_ctnr">
+        <EditText android:layout_height="wrap_content"
+                  android:layout_width="240dp"
+                  android:hint="Search..."
+                  android:id="@+id/search_text"
+                  android:text="N15AQ"
+                  android:singleLine="true"
+                  android:inputType="text|textAutoCorrect|textAutoComplete"
+                  android:imeOptions="actionDone"></EditText>
+        <LinearLayout android:layout_height="wrap_content"
+                      android:layout_alignParentLeft="true"
+                      android:orientation="horizontal"
+                      android:layout_below="@+id/search_text"
+                      android:layout_width="wrap_content"
+                      android:id="@+id/search_butt_ctnr">
+            <Button android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:layout_width="60px"
+                    android:id="@+id/search_butt_st"></Button>
+            <Button android:layout_height="wrap_content"
+                    android:text="Way"
+                    android:layout_width="60px"
+                    android:id="@+id/search_butt_wp"></Button>
+            <Button android:layout_height="wrap_content"
+                    android:text="End"
+                    android:layout_width="60px"
+                    android:id="@+id/search_butt_end"></Button>
+            <Button android:layout_height="wrap_content"
+                    android:layout_width="60px"
+                    android:text="None"
+                    android:id="@+id/search_butt_clear"></Button>
+        </LinearLayout>
+        <ToggleButton android:layout_height="wrap_content"
+                      android:text="Beep"
+                      android:layout_width="60px"
+                      android:id="@+id/beep_but"
+                      android:layout_alignParentRight="true"></ToggleButton>
+
+    </RelativeLayout>
+</RelativeLayout>
