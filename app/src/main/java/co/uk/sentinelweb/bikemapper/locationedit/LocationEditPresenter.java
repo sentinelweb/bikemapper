@@ -1,8 +1,7 @@
-package co.uk.sentinelweb.bikemapper.locations;
+package co.uk.sentinelweb.bikemapper.locationedit;
 
 import android.content.Context;
-
-import java.util.List;
+import android.support.annotation.Nullable;
 
 import javax.inject.Inject;
 
@@ -17,26 +16,31 @@ import rx.schedulers.Schedulers;
 /**
  * Created by robert on 14/06/16.
  */
-public class LocationListPresenter implements BasePresenter {
+public class LocationEditPresenter implements BasePresenter {
 
     @Inject
     protected LocationsRepository _locationsRepository;
 
-    private final LocationListView _view;
+    private final LocationEditView _view;
+    private final Long _locationId;
 
-    LocationListPresenter(final Context c, final LocationListView view) {
+    LocationEditPresenter(@Nullable final Long locationId, final Context c, final LocationEditView view) {
         ((BikeApplication) c.getApplicationContext()).getComponent().inject(this);
+        _locationId = locationId;
         _view = view;
     }
 
     @Override
     public void subscribe() {
+        loadLocation();
+    }
+
+    private void loadLocation() {
         _view.setLoadingIndicator(true);
-        _locationsRepository.getItems()
+        _locationsRepository.getLocation(_locationId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .toList()
-                .subscribe(new Observer<List<Location>>() {
+                .subscribe(new Observer<Location>() {
                     @Override
                     public void onCompleted() {
                         _view.setLoadingIndicator(false);
@@ -48,8 +52,8 @@ public class LocationListPresenter implements BasePresenter {
                     }
 
                     @Override
-                    public void onNext(final List<Location> locations) {
-                        _view.setLocations(locations);
+                    public void onNext(final Location locations) {
+                        _view.setLocation(locations);
                     }
                 });
     }

@@ -2,17 +2,21 @@ package co.uk.sentinelweb.bikemapper.locations;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
 import co.uk.sentinelweb.bikemapper.core.model.Location;
 
@@ -26,15 +30,18 @@ public class LocationListFragment extends Fragment implements LocationListView {
 
     private static final String ARG_SCENARIO = "scenario";
 
-
     @Bind(R.id.list)
     protected RecyclerView _recyclerView;
+    @Bind(R.id.progress)
+    protected ProgressBar _progress;
+    @Bind(R.id.container)
+    protected RelativeLayout _container;
 
     private String scenario;
 
-    private OnInteractionListener mListener;
+    private OnInteractionListener _listener;
     private LocationRecyclerViewAdapter _adapter;
-    private LocationListPresenter presenter;
+    private LocationListPresenter _presenter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -63,16 +70,16 @@ public class LocationListFragment extends Fragment implements LocationListView {
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
                              final Bundle savedInstanceState) {
-        _recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_location_list, container, false);
-
+        _container = (RelativeLayout) inflater.inflate(R.layout.fragment_location_list, container, false);
+        ButterKnife.bind(this, _container);
         // Set the adapter
         if (_recyclerView instanceof RecyclerView) {
             final Context context = _recyclerView.getContext();
             _recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            _adapter = new LocationRecyclerViewAdapter(new ArrayList<>(), mListener);
+            _adapter = new LocationRecyclerViewAdapter(new ArrayList<>(), _listener);
             _recyclerView.setAdapter(_adapter);
         }
-        return _recyclerView;
+        return _container;
     }
 
 
@@ -80,28 +87,40 @@ public class LocationListFragment extends Fragment implements LocationListView {
     public void onAttach(final Context context) {
         super.onAttach(context);
         if (context instanceof OnInteractionListener) {
-            mListener = (OnInteractionListener) context;
+            _listener = (OnInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
         }
+
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        _listener = null;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        this._presenter.subscribe();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     @Override
     public void setPresenter(final LocationListPresenter presenter) {
-        this.presenter = presenter;
-        this.presenter.subscribe();
+        this._presenter = presenter;
+
     }
 
     @Override
     public void setLoadingIndicator(final boolean loading) {
-
+        _progress.setVisibility(loading ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -110,8 +129,8 @@ public class LocationListFragment extends Fragment implements LocationListView {
     }
 
     @Override
-    public void showLoadingTasksError() {
-
+    public void showLoadingError(final String message) {
+        Snackbar.make(_recyclerView, message, Snackbar.LENGTH_LONG).show();
     }
 
     public interface OnInteractionListener {

@@ -11,6 +11,13 @@ public class Location {
     private double latitude;
     private double longitude;
 
+    public Location(final long id, final String name, final double latitude, final double longitude) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }

@@ -1,6 +1,4 @@
-package co.uk.sentinelweb.bikemapper.locations;
-
-import java.util.List;
+package co.uk.sentinelweb.bikemapper.locationedit;
 
 import co.uk.sentinelweb.bikemapper.BaseView;
 import co.uk.sentinelweb.bikemapper.core.model.Location;
@@ -8,11 +6,11 @@ import co.uk.sentinelweb.bikemapper.core.model.Location;
 /**
  * Created by robert on 14/06/16.
  */
-public interface LocationListView extends BaseView<LocationListPresenter> {
+public interface LocationEditView extends BaseView<LocationEditPresenter> {
 
     void setLoadingIndicator(boolean loading);
 
     void showLoadingError(String message);
 
-    void setLocations(List<Location> locations);
+    void setLocation(Location location);
 }

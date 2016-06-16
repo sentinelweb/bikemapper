@@ -38,9 +38,18 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
             android:name=".locationmap.MapActivity"
+            android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/title_activity_map">
+
+        </activity>
+
+        <activity
+            android:name=".locationedit.LocationEditActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/title_activity_edit">
 
         </activity>
 

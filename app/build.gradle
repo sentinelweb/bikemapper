@@ -77,9 +77,9 @@ dependencies {
     provided 'org.glassfish:javax.annotation:10.0-b28'
 
     // RX Java/Android
-    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.5'
     // https://github.com/ReactiveX/RxAndroid
-    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxandroid:1.2.0'
 
     // https://github.com/JakeWharton/RxBinding/
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
