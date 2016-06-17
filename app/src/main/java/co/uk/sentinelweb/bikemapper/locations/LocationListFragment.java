@@ -134,6 +134,8 @@ public class LocationListFragment extends Fragment implements LocationListView {
     }
 
     public interface OnInteractionListener {
-        void onListFragmentInteraction(Location item);
+        void onListItemClick(Location item);
+
+        void onListBikeClick(Location item);
     }
 }

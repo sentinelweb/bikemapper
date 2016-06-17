@@ -1,4 +1,4 @@
-package co.uk.sentinelweb.bikemapper.locationedit;
+package co.uk.sentinelweb.bikemapper.locationmap;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
@@ -12,12 +12,12 @@ import co.uk.sentinelweb.bikemapper.decorator.LocationLatLngDecorator;
 /**
  * Created by robert on 15/06/16.
  */
-public class LocationEditViewModel extends BaseObservable {
+public class LocationMapViewModel extends BaseObservable {
 
     private final Location _location;
     private final LocationLatLngDecorator _locationLatLngDecorator;
 
-    public LocationEditViewModel(final Location location) {
+    public LocationMapViewModel(final Location location) {
         this._location = location;
         _locationLatLngDecorator = new LocationLatLngDecorator(location);
     }

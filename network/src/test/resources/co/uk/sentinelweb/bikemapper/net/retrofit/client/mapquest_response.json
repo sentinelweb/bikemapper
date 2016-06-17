@@ -1,0 +1,565 @@
+{
+  "route": {
+    "hasTollRoad": false,
+    "hasBridge": false,
+    "computedWaypoints": [],
+    "fuelUsed": 0,
+    "hasTunnel": true,
+    "hasUnpaved": false,
+    "hasHighway": true,
+    "realTime": -1,
+    "boundingBox": {
+      "ul": {
+        "lng": -0.108103,
+        "lat": 51.526149
+      },
+      "lr": {
+        "lng": -0.082268,
+        "lat": 51.517684
+      }
+    },
+    "distance": 1.838,
+    "time": 680,
+    "locationSequence": [
+      0,
+      1
+    ],
+    "hasSeasonalClosure": false,
+    "sessionId": "5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+    "locations": [
+      {
+        "latLng": {
+          "lng": -0.082217,
+          "lat": 51.525493
+        },
+        "adminArea4": "",
+        "adminArea5Type": "City",
+        "adminArea4Type": "County",
+        "adminArea5": "London",
+        "street": "68 Great Eastern Street",
+        "adminArea1": "GB",
+        "adminArea3": "England",
+        "type": "s",
+        "displayLatLng": {
+          "lng": -0.082217,
+          "lat": 51.525493
+        },
+        "linkId": 105759405,
+        "postalCode": "EC2A 3LX",
+        "sideOfStreet": "N",
+        "dragPoint": false,
+        "adminArea1Type": "Country",
+        "geocodeQuality": "ADDRESS",
+        "geocodeQualityCode": "L1AAA",
+        "adminArea3Type": "State"
+      },
+      {
+        "latLng": {
+          "lng": -0.107006,
+          "lat": 51.52021
+        },
+        "adminArea4": "",
+        "adminArea5Type": "City",
+        "adminArea4Type": "County",
+        "adminArea5": "London",
+        "street": "110 Saffron Hill",
+        "adminArea1": "GB",
+        "adminArea3": "England",
+        "type": "s",
+        "displayLatLng": {
+          "lng": -0.107006,
+          "lat": 51.52021
+        },
+        "linkId": 200621,
+        "postalCode": "EC1N 8HB",
+        "sideOfStreet": "N",
+        "dragPoint": false,
+        "adminArea1Type": "Country",
+        "geocodeQuality": "ADDRESS",
+        "geocodeQualityCode": "L1AAA",
+        "adminArea3Type": "State"
+      }
+    ],
+    "hasCountryCross": false,
+    "legs": [
+      {
+        "hasTollRoad": false,
+        "index": 0,
+        "hasBridge": false,
+        "hasTunnel": true,
+        "roadGradeStrategy": [
+          []
+        ],
+        "hasHighway": true,
+        "hasUnpaved": false,
+        "distance": 1.838,
+        "time": 680,
+        "origIndex": -1,
+        "hasSeasonalClosure": false,
+        "origNarrative": "",
+        "hasCountryCross": false,
+        "formattedTime": "00:11:20",
+        "destNarrative": "Proceed to 110 SAFFRON HILL.",
+        "destIndex": 11,
+        "maneuvers": [
+          {
+            "signs": [],
+            "index": 0,
+            "maneuverNotes": [],
+            "direction": 2,
+            "narrative": "Start out going northwest on A1202/Great Eastern Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/icon-dirs-start_sm.gif",
+            "distance": 0.088,
+            "time": 27,
+            "linkIds": [],
+            "streets": [
+              "A1202",
+              "Great Eastern Street"
+            ],
+            "attributes": 128,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:27",
+            "directionName": "Northwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-1,51.525397999999996,-0.082268,0,0|purple-2,51.526149,-0.08390099999999999,0,0|&center=51.5257735,-0.08308449999999999&zoom=14&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.082268,
+              "lat": 51.525398
+            },
+            "turnType": 0
+          },
+          {
+            "signs": [],
+            "index": 1,
+            "maneuverNotes": [],
+            "direction": 4,
+            "narrative": "Turn left onto walkway. Proceed south (See map for details).",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_left_sm.gif",
+            "distance": 0.019,
+            "time": 14,
+            "linkIds": [],
+            "streets": [],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:14",
+            "directionName": "South",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-2,51.526149,-0.08390099999999999,0,0|purple-3,51.525894,-0.084023,0,0|&center=51.5260215,-0.083962&zoom=15&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.083901,
+              "lat": 51.526149
+            },
+            "turnType": 6
+          },
+          {
+            "signs": [],
+            "index": 2,
+            "maneuverNotes": [],
+            "direction": 4,
+            "narrative": "Turn left onto Paul Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_left_sm.gif",
+            "distance": 0.272,
+            "time": 102,
+            "linkIds": [],
+            "streets": [
+              "Paul Street"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:01:42",
+            "directionName": "South",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-3,51.525894,-0.084023,0,0|purple-4,51.522082999999995,-0.084532,0,0|&center=51.5239885,-0.0842775&zoom=11&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.084023,
+              "lat": 51.525894
+            },
+            "turnType": 6
+          },
+          {
+            "signs": [],
+            "index": 3,
+            "maneuverNotes": [],
+            "direction": 4,
+            "narrative": "Paul Street becomes Wilson Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_straight_sm.gif",
+            "distance": 0.056,
+            "time": 17,
+            "linkIds": [],
+            "streets": [
+              "Wilson Street"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:17",
+            "directionName": "South",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-4,51.522082999999995,-0.084532,0,0|purple-5,51.521293,-0.084826,0,0|&center=51.521688,-0.084679&zoom=14&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.084532,
+              "lat": 51.522083
+            },
+            "turnType": 0
+          },
+          {
+            "signs": [],
+            "index": 4,
+            "maneuverNotes": [],
+            "direction": 7,
+            "narrative": "Turn right onto Cristopher Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_right_sm.gif",
+            "distance": 0.037,
+            "time": 16,
+            "linkIds": [],
+            "streets": [
+              "Cristopher Street"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:16",
+            "directionName": "West",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-5,51.521293,-0.084826,0,0|purple-6,51.521404,-0.08563799999999999,0,0|&center=51.5213485,-0.085232&zoom=15&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.084826,
+              "lat": 51.521293
+            },
+            "turnType": 2
+          },
+          {
+            "signs": [],
+            "index": 5,
+            "maneuverNotes": [],
+            "direction": 4,
+            "narrative": "Turn left onto Finsbury Square.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_left_sm.gif",
+            "distance": 0.073,
+            "time": 33,
+            "linkIds": [],
+            "streets": [
+              "Finsbury Square"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:33",
+            "directionName": "South",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-6,51.521404,-0.08563799999999999,0,0|purple-7,51.520374,-0.085905,0,0|&center=51.520889,-0.0857715&zoom=13&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.085638,
+              "lat": 51.521404
+            },
+            "turnType": 6
+          },
+          {
+            "signs": [],
+            "index": 6,
+            "maneuverNotes": [],
+            "direction": 7,
+            "narrative": "Turn right onto B100/Finsbury Square. Continue to follow B100.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_right_sm.gif",
+            "distance": 0.51,
+            "time": 173,
+            "linkIds": [],
+            "streets": [
+              "B100"
+            ],
+            "attributes": 2048,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:02:53",
+            "directionName": "West",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-7,51.520374,-0.085905,0,0|purple-8,51.520033999999995,-0.097402,0,0|&center=51.52020399999999,-0.0916535&zoom=11&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.085905,
+              "lat": 51.520374
+            },
+            "turnType": 2
+          },
+          {
+            "signs": [],
+            "index": 7,
+            "maneuverNotes": [],
+            "direction": 6,
+            "narrative": "B100 becomes Long Lane.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_straight_sm.gif",
+            "distance": 0.181,
+            "time": 67,
+            "linkIds": [],
+            "streets": [
+              "Long Lane"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:01:07",
+            "directionName": "Southwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-8,51.520033999999995,-0.097402,0,0|purple-9,51.518882,-0.10116699999999999,0,0|&center=51.519458,-0.0992845&zoom=13&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.097402,
+              "lat": 51.520034
+            },
+            "turnType": 0
+          },
+          {
+            "signs": [],
+            "index": 8,
+            "maneuverNotes": [],
+            "direction": 6,
+            "narrative": "Long Lane becomes Smithfield Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_straight_sm.gif",
+            "distance": 0.059,
+            "time": 24,
+            "linkIds": [],
+            "streets": [
+              "Smithfield Street"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:24",
+            "directionName": "Southwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-9,51.518882,-0.10116699999999999,0,0|purple-10,51.518508,-0.10239799999999999,0,0|&center=51.518694999999994,-0.1017825&zoom=15&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.101167,
+              "lat": 51.518882
+            },
+            "turnType": 0
+          },
+          {
+            "signs": [],
+            "index": 9,
+            "maneuverNotes": [],
+            "direction": 2,
+            "narrative": "Turn right onto East Poultry Avenue.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_right_sm.gif",
+            "distance": 0.057,
+            "time": 17,
+            "linkIds": [],
+            "streets": [
+              "East Poultry Avenue"
+            ],
+            "attributes": 2048,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:17",
+            "directionName": "Northwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-10,51.518508,-0.10239799999999999,0,0|purple-11,51.519251999999994,-0.102962,0,0|&center=51.518879999999996,-0.10268&zoom=14&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.102398,
+              "lat": 51.518508
+            },
+            "turnType": 2
+          },
+          {
+            "signs": [],
+            "index": 10,
+            "maneuverNotes": [],
+            "direction": 6,
+            "narrative": "Turn left onto Charterhouse Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_left_sm.gif",
+            "distance": 0.21,
+            "time": 74,
+            "linkIds": [],
+            "streets": [
+              "Charterhouse Street"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:01:14",
+            "directionName": "Southwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-11,51.519251999999994,-0.102962,0,0|purple-12,51.517879,-0.107309,0,0|&center=51.518565499999994,-0.10513549999999999&zoom=12&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.102962,
+              "lat": 51.519252
+            },
+            "turnType": 6
+          },
+          {
+            "signs": [],
+            "index": 11,
+            "maneuverNotes": [],
+            "direction": 6,
+            "narrative": "Stay straight to go onto B500/Holborn Circus.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_straight_sm.gif",
+            "distance": 0.009,
+            "time": 11,
+            "linkIds": [],
+            "streets": [
+              "B500",
+              "Holborn Circus"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:11",
+            "directionName": "Southwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-12,51.517879,-0.107309,0,0|purple-13,51.517776,-0.107445,0,0|&center=51.517827499999996,-0.107377&zoom=15&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.107309,
+              "lat": 51.517879
+            },
+            "turnType": 0
+          },
+          {
+            "signs": [],
+            "index": 12,
+            "maneuverNotes": [],
+            "direction": 6,
+            "narrative": "Stay straight to go onto A4/Holborn Circus.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_straight_sm.gif",
+            "distance": 0.008,
+            "time": 11,
+            "linkIds": [],
+            "streets": [
+              "A4",
+              "Holborn Circus"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:11",
+            "directionName": "Southwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-13,51.517776,-0.107445,0,0|purple-14,51.517683999999996,-0.107566,0,0|&center=51.51773,-0.1075055&zoom=15&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.107445,
+              "lat": 51.517776
+            },
+            "turnType": 0
+          },
+          {
+            "signs": [],
+            "index": 13,
+            "maneuverNotes": [],
+            "direction": 1,
+            "narrative": "Turn right onto B521/Holborn Circus. Continue to follow B521.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_right_sm.gif",
+            "distance": 0.118,
+            "time": 48,
+            "linkIds": [],
+            "streets": [
+              "B521"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:48",
+            "directionName": "North",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-14,51.517683999999996,-0.107566,0,0|purple-15,51.519348,-0.10810299999999999,0,0|&center=51.518516,-0.1078345&zoom=12&rand=-1911716326&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.107566,
+              "lat": 51.517684
+            },
+            "turnType": 2
+          },
+          {
+            "signs": [],
+            "index": 14,
+            "maneuverNotes": [],
+            "direction": 8,
+            "narrative": "Turn right onto Greville Street.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_right_sm.gif",
+            "distance": 0.082,
+            "time": 32,
+            "linkIds": [],
+            "streets": [
+              "Greville Street"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:32",
+            "directionName": "East",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-15,51.519348,-0.10810299999999999,0,0|purple-16,51.519591999999996,-0.10622799999999999,0,0|&center=51.51947,-0.1071655&zoom=14&rand=-1913640070&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.108103,
+              "lat": 51.519348
+            },
+            "turnType": 2
+          },
+          {
+            "signs": [],
+            "index": 15,
+            "maneuverNotes": [],
+            "direction": 2,
+            "narrative": "Turn left onto Saffron Hill.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/rs_left_sm.gif",
+            "distance": 0.059,
+            "time": 14,
+            "linkIds": [],
+            "streets": [
+              "Saffron Hill"
+            ],
+            "attributes": 0,
+            "transportMode": "BICYCLE",
+            "formattedTime": "00:00:14",
+            "directionName": "Northwest",
+            "mapUrl": "http://open.mapquestapi.com/staticmap/v4/getmap?key=FMRPx9Oy4ICRoMulfDFvtUvfJiSIbb4K&type=map&size=225,160&pois=purple-16,51.519591999999996,-0.10622799999999999,0,0|purple-17,51.52037,-0.10679799999999999,0,0|&center=51.519981,-0.106513&zoom=14&rand=-1913640070&session=5763a772-0360-000b-02b7-0e4f-00163ec9423e",
+            "startPoint": {
+              "lng": -0.106228,
+              "lat": 51.519592
+            },
+            "turnType": 6
+          },
+          {
+            "signs": [],
+            "index": 16,
+            "maneuverNotes": [],
+            "direction": 0,
+            "narrative": "110 SAFFRON HILL.",
+            "iconUrl": "http://content.mapquest.com/mqsite/turnsigns/icon-dirs-end_sm.gif",
+            "distance": 0,
+            "time": 0,
+            "linkIds": [],
+            "streets": [],
+            "attributes": 0,
+            "transportMode": "AUTO",
+            "formattedTime": "00:00:00",
+            "directionName": "",
+            "startPoint": {
+              "lng": -0.106798,
+              "lat": 51.52037
+            },
+            "turnType": -1
+          }
+        ],
+        "hasFerry": false
+      }
+    ],
+    "formattedTime": "00:11:20",
+    "routeError": {
+      "message": "",
+      "errorCode": -400
+    },
+    "options": {
+      "mustAvoidLinkIds": [],
+      "drivingStyle": 2,
+      "countryBoundaryDisplay": true,
+      "generalize": -1,
+      "narrativeType": "text",
+      "locale": "en_US",
+      "avoidTimedConditions": false,
+      "destinationManeuverDisplay": true,
+      "enhancedNarrative": false,
+      "filterZoneFactor": -1,
+      "timeType": 0,
+      "maxWalkingDistance": -1,
+      "routeType": "BICYCLE",
+      "transferPenalty": -1,
+      "walkingSpeed": -1,
+      "stateBoundaryDisplay": true,
+      "maxLinkId": 0,
+      "arteryWeights": [],
+      "tryAvoidLinkIds": [],
+      "unit": "M",
+      "routeNumber": 0,
+      "doReverseGeocode": true,
+      "shapeFormat": "raw",
+      "maneuverPenalty": -1,
+      "useTraffic": false,
+      "returnLinkDirections": false,
+      "avoidTripIds": [],
+      "manmaps": "true",
+      "highwayEfficiency": 22,
+      "sideOfStreetDisplay": true,
+      "cyclingRoadFactor": 1,
+      "urbanAvoidFactor": -1
+    },
+    "hasFerry": false
+  },
+  "info": {
+    "copyright": {
+      "text": "© 2016 MapQuest, Inc.",
+      "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+      "imageAltText": "© 2016 MapQuest, Inc."
+    },
+    "statuscode": 0,
+    "messages": []
+  }
+}

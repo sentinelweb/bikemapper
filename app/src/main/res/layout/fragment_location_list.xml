@@ -22,6 +22,6 @@
         android:layout_marginRight="16dp"
         app:layoutManager="LinearLayoutManager"
         tools:context=".locations.LocationListFragment"
-        tools:listitem="@layout/fragment_location"/>
+        tools:listitem="@layout/listitem_location"/>
 
 </RelativeLayout>

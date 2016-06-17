@@ -8,6 +8,7 @@ import co.uk.sentinelweb.bikemapper.BaseActivity;
 import co.uk.sentinelweb.bikemapper.R;
 import co.uk.sentinelweb.bikemapper.core.model.Location;
 import co.uk.sentinelweb.bikemapper.locationedit.LocationEditActivity;
+import co.uk.sentinelweb.bikemapper.locationmap.LocationMapActivity;
 import co.uk.sentinelweb.bikemapper.util.ViewServer;
 
 public class LocationListActivity extends BaseActivity implements
@@ -65,8 +66,14 @@ public class LocationListActivity extends BaseActivity implements
     }
 
     @Override
-    public void onListFragmentInteraction(final Location item) {
+    public void onListItemClick(final Location item) {
         final Intent launchIntent = LocationEditActivity.getLaunchIntent(this, item.getId());
+        startActivity(launchIntent);
+    }
+
+    @Override
+    public void onListBikeClick(final Location item) {
+        final Intent launchIntent = LocationMapActivity.getLaunchIntent(this, item.getId());
         startActivity(launchIntent);
     }
 

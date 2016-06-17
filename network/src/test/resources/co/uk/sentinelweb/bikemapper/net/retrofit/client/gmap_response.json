@@ -1,0 +1,234 @@
+{
+  "geocoded_waypoints": [
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJD3fa_q8cdkgRrtZtnrgh3hc",
+      "types": [
+        "street_address"
+      ]
+    },
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJ85VIBk4bdkgRvaIvN3OefV8",
+      "types": [
+        "premise"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "bounds": {
+        "northeast": {
+          "lat": 51.5262347,
+          "lng": -0.0823236
+        },
+        "southwest": {
+          "lat": 51.5202921,
+          "lng": -0.1082804
+        }
+      },
+      "copyrights": "Map data ©2016 Google",
+      "legs": [
+        {
+          "distance": {
+            "text": "2.2 km",
+            "value": 2204
+          },
+          "duration": {
+            "text": "10 mins",
+            "value": 591
+          },
+          "end_address": "57A Farringdon Rd, London EC1M 3JB, UK",
+          "end_location": {
+            "lat": 51.5202921,
+            "lng": -0.1067354
+          },
+          "start_address": "75B Great Eastern St, London EC2A 3HN, UK",
+          "start_location": {
+            "lat": 51.5254141,
+            "lng": -0.0823236
+          },
+          "steps": [
+            {
+              "distance": {
+                "text": "0.2 km",
+                "value": 156
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 27
+              },
+              "end_location": {
+                "lat": 51.5262186,
+                "lng": -0.08413949999999999
+              },
+              "html_instructions": "Head \u003cb\u003enorth-west\u003c/b\u003e on \u003cb\u003eGreat Eastern St\u003c/b\u003e/\u003cb\u003eA1202\u003c/b\u003e towards \u003cb\u003eRivington St\u003c/b\u003e",
+              "polyline": {
+                "points": "ypnyHnaO{BlFGNEd@ADGRIZCP"
+              },
+              "start_location": {
+                "lat": 51.5254141,
+                "lng": -0.0823236
+              },
+              "travel_mode": "BICYCLING"
+            },
+            {
+              "distance": {
+                "text": "1.8 km",
+                "value": 1787
+              },
+              "duration": {
+                "text": "7 mins",
+                "value": 425
+              },
+              "end_location": {
+                "lat": 51.5220829,
+                "lng": -0.1082804
+              },
+              "html_instructions": "Continue onto \u003cb\u003eOld St\u003c/b\u003e/\u003cb\u003eA5201\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinue to follow A5201\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEntering toll zone in 850&nbsp;m at Golden Ln\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003eLeaving toll zone in 1.1&nbsp;km at Goswell Rd/A1\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003eEntering toll zone in 1.4&nbsp;km at St John St/B501\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003eGo through 1 roundabout\u003c/div\u003e",
+              "polyline": {
+                "points": "{unyHzlOAp@?VAV?T@V?b@RzADZP`AZhBNx@Jf@PF|@l@BP@J?N?JAPYz@Gb@AP?VA`@Bb@Bh@Dv@PfDJrCL|A?JVzBDl@Z~CBXNnAZpBBXVvAJh@ThA\\fBXzAP|@H`@F\\FVNf@z@zCRp@Fh@Dt@@RB^Hf@d@vBPz@RdAX|A@RL|@BR?BB\\Dp@FnA@j@Ab@EfC?b@@`@@f@Bd@ZhELjBFj@J`BBnADnAHnBAR@\\?BFvA"
+              },
+              "start_location": {
+                "lat": 51.5262186,
+                "lng": -0.08413949999999999
+              },
+              "travel_mode": "BICYCLING"
+            },
+            {
+              "distance": {
+                "text": "23 m",
+                "value": 23
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 7
+              },
+              "end_location": {
+                "lat": 51.5219086,
+                "lng": -0.1080953
+              },
+              "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eSaffron Hill\u003c/b\u003e",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "_|myHvcT`@c@"
+              },
+              "start_location": {
+                "lat": 51.5220829,
+                "lng": -0.1082804
+              },
+              "travel_mode": "BICYCLING"
+            },
+            {
+              "distance": {
+                "text": "14 m",
+                "value": 14
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 5
+              },
+              "end_location": {
+                "lat": 51.5218314,
+                "lng": -0.1082566
+              },
+              "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eHatton Wall\u003c/b\u003e",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "}zmyHrbTN^"
+              },
+              "start_location": {
+                "lat": 51.5219086,
+                "lng": -0.1080953
+              },
+              "travel_mode": "BICYCLING"
+            },
+            {
+              "distance": {
+                "text": "0.1 km",
+                "value": 125
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 23
+              },
+              "end_location": {
+                "lat": 51.5207956,
+                "lng": -0.1075566
+              },
+              "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eHatton Pl\u003c/b\u003e",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "mzmyHrcTlEkC"
+              },
+              "start_location": {
+                "lat": 51.5218314,
+                "lng": -0.1082566
+              },
+              "travel_mode": "BICYCLING"
+            },
+            {
+              "distance": {
+                "text": "29 m",
+                "value": 29
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 41
+              },
+              "end_location": {
+                "lat": 51.5208664,
+                "lng": -0.10715
+              },
+              "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eSt Cross St\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eWalk your bicycle\u003c/div\u003e",
+              "maneuver": "turn-left",
+              "polyline": {
+                "points": "_tmyHf_TMqA"
+              },
+              "start_location": {
+                "lat": 51.5207956,
+                "lng": -0.1075566
+              },
+              "travel_mode": "BICYCLING"
+            },
+            {
+              "distance": {
+                "text": "70 m",
+                "value": 70
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 63
+              },
+              "end_location": {
+                "lat": 51.5202921,
+                "lng": -0.1067354
+              },
+              "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eSaffron Hill\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eWalk your bicycle\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003eDestination will be on the right\u003c/div\u003e",
+              "maneuver": "turn-right",
+              "polyline": {
+                "points": "mtmyHt|SrA{@^U"
+              },
+              "start_location": {
+                "lat": 51.5208664,
+                "lng": -0.10715
+              },
+              "travel_mode": "BICYCLING"
+            }
+          ],
+          "traffic_speed_entry": [],
+          "via_waypoint": []
+        }
+      ],
+      "overview_polyline": {
+        "points": "ypnyHnaOcC|FGj@Qn@EbA?|A?b@RzAV|Aj@bDJf@PF|@l@BP@ZA\\Yz@Gb@Ah@@dAf@|Kj@rG^xDj@`EZpB`@rBrAbHNt@jAbERp@Fh@FhALfAv@rDl@bDNpALfBHzBGjD@dADlA|@bMH~CFbC@`@FvA`@c@N^lEkCMqArA{@^U"
+      },
+      "summary": "A5201",
+      "warnings": [
+        "Bicycling directions are in beta. Use caution – This route may contain streets that aren't suited for bicycling."
+      ],
+      "waypoint_order": []
+    }
+  ],
+  "status": "OK"
+}

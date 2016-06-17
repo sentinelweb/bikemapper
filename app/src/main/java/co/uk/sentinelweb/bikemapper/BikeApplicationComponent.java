@@ -7,7 +7,9 @@ import javax.inject.Singleton;
 import co.uk.sentinelweb.bikemapper.data.DataModule;
 import co.uk.sentinelweb.bikemapper.data.LocationsRepository;
 import co.uk.sentinelweb.bikemapper.locationedit.LocationEditPresenter;
+import co.uk.sentinelweb.bikemapper.locationmap.LocationMapPresenter;
 import co.uk.sentinelweb.bikemapper.locations.LocationListPresenter;
+import co.uk.sentinelweb.bikemapper.template.LocationTmplPresenter;
 import dagger.Component;
 
 /**
@@ -22,9 +24,13 @@ public interface BikeApplicationComponent {
     public void plus(DataModule module);
 
     // presenters
-    public void inject(LocationListPresenter fragemnt);
+    public void inject(LocationListPresenter fragment);
 
-    public void inject(LocationEditPresenter fragemnt);
+    public void inject(LocationEditPresenter fragment);
+
+    public void inject(LocationMapPresenter fragment);
+
+    public void inject(LocationTmplPresenter fragment);// unused
 
     class Injector {
         public static BikeApplicationComponent getComponent(final Context c) {

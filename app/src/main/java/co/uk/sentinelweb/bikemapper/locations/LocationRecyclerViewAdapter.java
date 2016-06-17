@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -31,21 +32,26 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
     @Override
     public ViewHolder onCreateViewHolder(final ViewGroup parent, final int viewType) {
         final View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_location, parent, false);
+                .inflate(R.layout.listitem_location, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = _items.get(position);
-        holder.mIdView.setText(Long.toString(holder.mItem.getId()));
-        holder.mContentView.setText(holder.mItem.getName());
+        holder._idView.setText(Long.toString(holder.mItem.getId()));
+        holder._textView.setText(holder.mItem.getName());
 
-        holder.mView.setOnClickListener((v) -> {
-            if (null != _listener) {
-                _listener.onListFragmentInteraction(holder.mItem);
-            }
-        });
+        if (null != _listener) {
+            holder._view.setOnClickListener((v) -> {
+                _listener.onListItemClick(holder.mItem);
+            });
+            holder._bikeButton.setOnClickListener((v) -> {
+                _listener.onListBikeClick(holder.mItem);
+            });
+        }
+
+
     }
 
     @Override
@@ -59,23 +65,25 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
+        public final View _view;
         @Bind(R.id.id)
-        public TextView mIdView;
+        public TextView _idView;
         @Bind(R.id.content)
-        public TextView mContentView;
+        public TextView _textView;
+        @Bind(R.id.bikeButton)
+        public ImageView _bikeButton;
 
         private Location mItem;
 
         public ViewHolder(final View view) {
             super(view);
-            mView = view;
+            _view = view;
             ButterKnife.bind(this, view);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + _textView.getText() + "'";
         }
     }
 }
