@@ -5,13 +5,11 @@ import org.junit.Test;
 import java.io.IOException;
 
 import co.uk.sentinelweb.bikemapper.net.response.google.GoogleMapsDirectionsResponse;
+import co.uk.sentinelweb.bikemapper.net.response.google.GoogleMapsDirectionsResponseTest;
 import co.uk.sentinelweb.bikemapper.net.retrofit.IApiKeyProvider;
 import retrofit2.Call;
 import retrofit2.Response;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -34,8 +32,7 @@ public class GoogleMapsDirectionsClientTest {
         try {
             final Response<GoogleMapsDirectionsResponse> execute = directionsResponse.execute();
             final GoogleMapsDirectionsResponse body = execute.body();
-            assertThat("response was null", body, is(notNullValue()));
-            assertThat("response wasn't OK null", body.getStatus(), is("OK"));
+            GoogleMapsDirectionsResponseTest.checkResponse(body);
         } catch (final IOException e) {
             e.printStackTrace();
             assertTrue("Exception running test", false);

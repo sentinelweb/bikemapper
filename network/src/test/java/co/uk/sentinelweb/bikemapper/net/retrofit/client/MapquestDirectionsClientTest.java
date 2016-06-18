@@ -34,7 +34,7 @@ public class MapquestDirectionsClientTest {
             final Response<MapQuestDirectionsResponse> execute = directionsResponse.execute();
             final MapQuestDirectionsResponse body = execute.body();
             assertThat("response was null", body, is(notNullValue()));
-            assertThat("response wasn't OK null", body.getInfo().getStatus(), is(0));
+            assertThat("response wasn't OK null", body.info.status, is(0));
         } catch (final IOException e) {
             e.printStackTrace();
             assertTrue("Exception running test", false);
