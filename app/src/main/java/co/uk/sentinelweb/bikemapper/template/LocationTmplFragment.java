@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 
 /**
  * A fragment to edit a location
@@ -92,7 +92,7 @@ public class LocationTmplFragment extends Fragment implements LocationTmplView, 
     }
 
     @Override
-    public void setLocation(final Location location) {
+    public void setLocation(final SavedLocation location) {
         _viewModel = new LocationTmplViewModel(location);
         //binding.setLocation(_viewModel);
         //updateMapLocation();

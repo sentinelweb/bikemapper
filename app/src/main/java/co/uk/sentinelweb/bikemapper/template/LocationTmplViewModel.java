@@ -6,19 +6,17 @@ import android.databinding.Bindable;
 import com.google.android.gms.maps.model.LatLng;
 
 import co.uk.sentinelweb.bikemapper.BR;
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.decorator.LocationLatLngDecorator;
 
 /**
  * Created by robert on 15/06/16.
  */
 public class LocationTmplViewModel extends BaseObservable {
 
-    public static final Location EMPTY_LOCATION = new Location(-1, "Empty", 0, 0);
+    private final SavedLocation location;
 
-    private final Location location;
-    private LatLng _latLng;
-
-    public LocationTmplViewModel(final Location location) {
+    public LocationTmplViewModel(final SavedLocation location) {
         this.location = location;
     }
 
@@ -37,6 +35,6 @@ public class LocationTmplViewModel extends BaseObservable {
     }
 
     public LatLng getLatLng() {
-        return new LatLng(location.getLatitude(), location.getLongitude());
+        return new LocationLatLngDecorator(location.getLocation()).getLatLng();
     }
 }

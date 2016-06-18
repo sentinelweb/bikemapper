@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import co.uk.sentinelweb.bikemapper.BasePresenter;
 import co.uk.sentinelweb.bikemapper.BikeApplication;
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.data.LocationsRepository;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
@@ -36,7 +36,7 @@ public class LocationListPresenter implements BasePresenter {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .toList()
-                .subscribe(new Observer<List<Location>>() {
+                .subscribe(new Observer<List<SavedLocation>>() {
                     @Override
                     public void onCompleted() {
                         _view.setLoadingIndicator(false);
@@ -48,7 +48,7 @@ public class LocationListPresenter implements BasePresenter {
                     }
 
                     @Override
-                    public void onNext(final List<Location> locations) {
+                    public void onNext(final List<SavedLocation> locations) {
                         _view.setLocations(locations);
                     }
                 });

@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 
 /**
  * A fragment representing a list of Items.
@@ -124,7 +124,7 @@ public class LocationListFragment extends Fragment implements LocationListView {
     }
 
     @Override
-    public void setLocations(final List<Location> locations) {
+    public void setLocations(final List<SavedLocation> locations) {
         _adapter.setItems(locations);
     }
 
@@ -134,8 +134,8 @@ public class LocationListFragment extends Fragment implements LocationListView {
     }
 
     public interface OnInteractionListener {
-        void onListItemClick(Location item);
+        void onListItemClick(SavedLocation item);
 
-        void onListBikeClick(Location item);
+        void onListBikeClick(SavedLocation item);
     }
 }

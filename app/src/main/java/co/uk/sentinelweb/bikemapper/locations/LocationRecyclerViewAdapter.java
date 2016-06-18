@@ -13,6 +13,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
 import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.locations.LocationListFragment.OnInteractionListener;
 
 /**
@@ -21,10 +22,10 @@ import co.uk.sentinelweb.bikemapper.locations.LocationListFragment.OnInteraction
  */
 public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRecyclerViewAdapter.ViewHolder> {
 
-    private List<Location> _items;
+    private List<SavedLocation> _items;
     private final OnInteractionListener _listener;
 
-    public LocationRecyclerViewAdapter(final List<Location> items, final OnInteractionListener listener) {
+    public LocationRecyclerViewAdapter(final List<SavedLocation> items, final OnInteractionListener listener) {
         _items = items;
         _listener = listener;
     }
@@ -59,7 +60,7 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
         return _items.size();
     }
 
-    public void setItems(final List<Location> items) {
+    public void setItems(final List<SavedLocation> items) {
         _items = items;
         notifyDataSetChanged();
     }
@@ -73,7 +74,7 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
         @Bind(R.id.bikeButton)
         public ImageView _bikeButton;
 
-        private Location mItem;
+        private SavedLocation mItem;
 
         public ViewHolder(final View view) {
             super(view);
