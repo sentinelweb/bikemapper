@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 
 import javax.inject.Inject;
 
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import rx.Observable;
 
 /**
@@ -17,7 +17,7 @@ public class LocationsRepository {
 
     private final Context _context;
 
-    private final LinkedHashMap<Long, Location> _cache = new LinkedHashMap<>();
+    private final LinkedHashMap<Long, SavedLocation> _cache = new LinkedHashMap<>();
 
     @Inject
     LocationsRepository(final Context context) {
@@ -32,17 +32,17 @@ public class LocationsRepository {
                 .subscribe();
     }
 
-    public Observable<Location> getItems() {
+    public Observable<SavedLocation> getItems() {
         return Observable.from(_cache.values());
     }
 
-    public void saveLocation(final Location location) {
+    public void saveLocation(final SavedLocation location) {
         // TODO save location
         _cache.put(location.getId(), location);
     }
 
-    public Observable<Location> getLocation(final Long id) {
-        final Location location = _cache.get(id);
+    public Observable<SavedLocation> getLocation(final Long id) {
+        final SavedLocation location = _cache.get(id);
         if (location != null) {
             return Observable.just(location);
         }

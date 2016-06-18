@@ -6,7 +6,7 @@ import android.databinding.Bindable;
 import com.google.android.gms.maps.model.LatLng;
 
 import co.uk.sentinelweb.bikemapper.BR;
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.decorator.LocationLatLngDecorator;
 
 /**
@@ -14,12 +14,12 @@ import co.uk.sentinelweb.bikemapper.decorator.LocationLatLngDecorator;
  */
 public class LocationMapViewModel extends BaseObservable {
 
-    private final Location _location;
+    private final SavedLocation _location;
     private final LocationLatLngDecorator _locationLatLngDecorator;
 
-    public LocationMapViewModel(final Location location) {
+    public LocationMapViewModel(final SavedLocation location) {
         this._location = location;
-        _locationLatLngDecorator = new LocationLatLngDecorator(location);
+        _locationLatLngDecorator = new LocationLatLngDecorator(location.getLocation());
     }
 
     @Bindable
@@ -30,10 +30,6 @@ public class LocationMapViewModel extends BaseObservable {
     public void setName(final String name) {
         _location.setName(name);
         notifyPropertyChanged(BR.name);
-    }
-
-    public void onNameChanged(final CharSequence s, final int start, final int before, final int count) {
-        setName(s.toString());
     }
 
     public LatLng getLatLng() {

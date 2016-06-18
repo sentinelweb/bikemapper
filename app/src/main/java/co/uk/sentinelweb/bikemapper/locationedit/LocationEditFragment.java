@@ -14,6 +14,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.databinding.FragmentLocationEditBinding;
 import rx.Observable;
 
@@ -98,7 +99,7 @@ public class LocationEditFragment extends Fragment implements LocationEditView, 
     }
 
     @Override
-    public void setLocation(final Location location) {
+    public void setLocation(final SavedLocation location) {
         _viewModel = new LocationEditViewModel(location);
         binding.setLocation(_viewModel);
         updateMapLocation();

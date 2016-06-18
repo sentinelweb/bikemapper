@@ -5,6 +5,7 @@ allprojects {
 }
 
 dependencies {
+    compile project(':core')
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     //Unit test
