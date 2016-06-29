@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 import co.uk.sentinelweb.bikemapper.net.response.mapquest.MapQuestDirectionsResponse;
+import co.uk.sentinelweb.bikemapper.net.response.mapquest.MapQuestDirectionsResponseTest;
 import co.uk.sentinelweb.bikemapper.net.retrofit.IApiKeyProvider;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -33,6 +34,7 @@ public class MapquestDirectionsClientTest {
         try {
             final Response<MapQuestDirectionsResponse> execute = directionsResponse.execute();
             final MapQuestDirectionsResponse body = execute.body();
+            MapQuestDirectionsResponseTest.checkResponse(body);
             assertThat("response was null", body, is(notNullValue()));
             assertThat("response wasn't OK null", body.info.status, is(0));
         } catch (final IOException e) {

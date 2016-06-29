@@ -2,7 +2,7 @@ package co.uk.sentinelweb.bikemapper.net.response.google;
 
 import org.junit.Test;
 
-import co.uk.sentinelweb.bikemapper.net.TestUtils;
+import co.uk.sentinelweb.bikemapper.net.TestResourceUtils;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -15,9 +15,9 @@ import static org.junit.Assert.assertThat;
  */
 public class GoogleMapsDirectionsResponseTest {
     @Test
-    public void shouldTestGmapDirections() {
-        final String string = TestUtils.getString(GoogleMapsDirectionsResponse.class, "gmap_response.json");
-        final GoogleMapsDirectionsResponse body = TestUtils.getGson().fromJson(string, GoogleMapsDirectionsResponse.class);
+    public void shouldTestGmapResponse() {
+        final String string = TestResourceUtils.getString(getClass(), "gmap_response.json");
+        final GoogleMapsDirectionsResponse body = TestResourceUtils.getGson().fromJson(string, GoogleMapsDirectionsResponse.class);
         GoogleMapsDirectionsResponseTest.checkResponse(body);
     }
 
