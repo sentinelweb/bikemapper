@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class MapQuestDirectionsResponse {
     public MInfo info;
+    public MRoute route;
 
     public static class MRoute {
         public MBounds boundingbox;

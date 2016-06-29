@@ -12,7 +12,7 @@ import java.io.InputStream;
  * Other utilities for testing.
  * Created by robert on 08/01/16.
  */
-public class TestUtils {
+public class TestResourceUtils {
 
     public static Gson getGson() {
         final Gson gson = new GsonBuilder()
