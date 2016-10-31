@@ -2,6 +2,7 @@ package co.uk.sentinelweb.bikemapper;
 
 import javax.inject.Singleton;
 
+import co.uk.sentinelweb.bikemapper.util.BikeApplicationPreferences;
 import dagger.Module;
 import dagger.Provides;
 
@@ -10,7 +11,7 @@ import dagger.Provides;
  */
 @Module
 public class BikeApplicationModule {
-    protected BikeApplication mApp;
+    private final BikeApplication mApp;
 
     public BikeApplicationModule(final BikeApplication app) {
         mApp = app;
@@ -21,4 +22,12 @@ public class BikeApplicationModule {
     public BikeApplication provideApplication() {
         return mApp;
     }
+
+    @Provides
+    @Singleton
+    public BikeApplicationPreferences providePreferences(final BikeApplication app) {
+        return new BikeApplicationPreferences(app);
+    }
+
+
 }

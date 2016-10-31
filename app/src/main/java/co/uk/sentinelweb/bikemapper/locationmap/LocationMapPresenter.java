@@ -5,10 +5,10 @@ import android.support.annotation.Nullable;
 
 import javax.inject.Inject;
 
-import co.uk.sentinelweb.bikemapper.BasePresenter;
 import co.uk.sentinelweb.bikemapper.BikeApplication;
+import co.uk.sentinelweb.bikemapper.MVPContract;
 import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
-import co.uk.sentinelweb.bikemapper.data.LocationsRepository;
+import co.uk.sentinelweb.bikemapper.data.ILocationsRepository;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -16,11 +16,11 @@ import rx.schedulers.Schedulers;
 /**
  * Created by robert on 14/06/16.
  */
-public class LocationMapPresenter implements BasePresenter {
+public class LocationMapPresenter implements MVPContract.BasePresenter {
 
     private final Context _context;
     @Inject
-    protected LocationsRepository _locationsRepository;
+    protected ILocationsRepository _ILocationsRepository;
 
     private final LocationMapView _view;
     private final Long _locationId;
@@ -39,7 +39,7 @@ public class LocationMapPresenter implements BasePresenter {
 
     private void loadLocation() {
         _view.setLoadingIndicator(true);
-        _locationsRepository.getLocation(_locationId)
+        _ILocationsRepository.getLocation(_locationId)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<SavedLocation>() {

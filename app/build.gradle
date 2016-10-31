@@ -14,13 +14,13 @@ buildscript {
     configurations.classpath.exclude group: 'com.android.tools.external.lombok'
 }
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
-apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'//!java8
+apply plugin: 'me.tatarka.retrolambda'//!java8
 apply plugin: 'let'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         applicationId "co.uk.sentinelweb.bikemapper"
@@ -28,6 +28,10 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+// re-ebable when gradle 2.3 comes out so databinding works
+//        jackOptions {
+//            enabled true
+//        }
 
         vectorDrawables.useSupportLibrary = true
 
@@ -104,10 +108,11 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.0'
     //https://github.com/greenrobot/EventBus
 
-    // dagger 2.1
-    compile 'com.google.dagger:dagger:2.1'
-    apt 'com.google.dagger:dagger-compiler:2.1'
+    // dagger 2.5
+    compile 'com.google.dagger:dagger:2.5'
+    apt 'com.google.dagger:dagger-compiler:2.5'
     provided 'org.glassfish:javax.annotation:10.0-b28'
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.5'
 
     // RX Java/Android
     compile 'io.reactivex:rxjava:1.1.5'
@@ -115,7 +120,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.0'
 
     // https://github.com/JakeWharton/RxBinding/
-    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    //compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
 
     // https://github.com/square/leakcanary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'

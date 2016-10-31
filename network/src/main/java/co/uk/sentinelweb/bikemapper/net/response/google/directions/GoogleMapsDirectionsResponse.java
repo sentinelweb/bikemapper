@@ -1,4 +1,4 @@
-package co.uk.sentinelweb.bikemapper.net.response.google;
+package co.uk.sentinelweb.bikemapper.net.response.google.directions;
 
 import java.util.List;
 

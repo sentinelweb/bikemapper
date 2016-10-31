@@ -6,10 +6,10 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import co.uk.sentinelweb.bikemapper.BasePresenter;
 import co.uk.sentinelweb.bikemapper.BikeApplication;
+import co.uk.sentinelweb.bikemapper.MVPContract;
 import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
-import co.uk.sentinelweb.bikemapper.data.LocationsRepository;
+import co.uk.sentinelweb.bikemapper.data.ILocationsRepository;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -17,10 +17,10 @@ import rx.schedulers.Schedulers;
 /**
  * Created by robert on 14/06/16.
  */
-public class LocationListPresenter implements BasePresenter {
+public class LocationListPresenter implements MVPContract.BasePresenter {
 
     @Inject
-    protected LocationsRepository _locationsRepository;
+    protected ILocationsRepository _ILocationsRepository;
 
     private final LocationListView _view;
 
@@ -32,7 +32,7 @@ public class LocationListPresenter implements BasePresenter {
     @Override
     public void subscribe() {
         _view.setLoadingIndicator(true);
-        _locationsRepository.getItems()
+        _ILocationsRepository.getItems()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .toList()

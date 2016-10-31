@@ -3,6 +3,7 @@ package co.uk.sentinelweb.bikemapper.net.response.google;
 import org.junit.Test;
 
 import co.uk.sentinelweb.bikemapper.net.TestResourceUtils;
+import co.uk.sentinelweb.bikemapper.net.response.google.directions.GoogleMapsDirectionsResponse;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
@@ -32,7 +33,7 @@ public class GoogleMapsDirectionsResponseTest {
         assertThat("route bounds should not be null", firstRoute.bounds, is(notNullValue()));
         assertThat("route northeast should not be null", firstRoute.bounds.northeast, is(notNullValue()));
         assertThat("route southwest should not be null", firstRoute.bounds.southwest, is(notNullValue()));
-        assertThat("route southwest lat should be 51.5202921", firstRoute.bounds.southwest.lat, is(closeTo(51.5202921, 0.0000001)));
+        assertThat("route southwest lat should be 51.5202921", firstRoute.bounds.southwest.lat, is(closeTo(51.5202921, 0.001)));
         assertThat("route overview_polyline should not be null", firstRoute.overview_polyline, is(notNullValue()));
         assertThat("route copyrights should not be null", firstRoute.copyrights, is(notNullValue()));
         assertThat("route warnings should not be null", firstRoute.warnings, is(notNullValue()));

@@ -1,9 +1,13 @@
 package co.uk.sentinelweb.bikemapper.locationedit;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuInflater;
 
 import co.uk.sentinelweb.bikemapper.BaseActivity;
 import co.uk.sentinelweb.bikemapper.R;
@@ -43,6 +47,20 @@ public class LocationEditActivity extends BaseActivity {
         _locationEditPresenter = new LocationEditPresenter(id, this, _locationEditFragment);
         _locationEditFragment.setPresenter(_locationEditPresenter);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        final MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.edit_location, menu);
+        // Associate searchable configuration with the SearchView
+        final SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        final SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        //searchView.setSuggestionsAdapter(new );
+        return true;
     }
 
     @Override
