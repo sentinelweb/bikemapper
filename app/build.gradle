@@ -118,7 +118,7 @@ dependencies {
 //    annotationProcessor 'com.google.dagger:dagger-compiler:2.5'
 
     // RX Java/Android
-    compile 'io.reactivex:rxjava:1.1.5'
+    compile "io.reactivex:rxjava:$rxjava_version"
     // https://github.com/ReactiveX/RxAndroid
     compile 'io.reactivex:rxandroid:1.2.0'
 

@@ -17,10 +17,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.List;
+
 import co.uk.sentinelweb.bikemapper.R;
+import co.uk.sentinelweb.bikemapper.core.model.Place;
 import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.databinding.FragmentLocationEditBinding;
-import rx.Observable;
 
 /**
  * A fragment to edit a location
@@ -36,9 +38,8 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
 
     private LocationEditContract.Presenter _presenter;
 
-    private Observable<CharSequence> _editNameObservable;
-
     private GoogleMap _googleMap;
+    private SearchPlaceSuggestionsAdapter _suggestionsAdapter;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -72,7 +73,21 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
         final SearchView searchView =
                 (SearchView) menu.findItem(R.id.search).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
-        //searchView.setSuggestionsAdapter();
+        _suggestionsAdapter = new SearchPlaceSuggestionsAdapter(getActivity());
+        searchView.setSuggestionsAdapter(_suggestionsAdapter);
+        searchView.setOnSuggestionListener(new SearchView.OnSuggestionListener() {
+            @Override
+            public boolean onSuggestionSelect(final int position) {
+                return false;
+            }
+
+            @Override
+            public boolean onSuggestionClick(final int position) {
+                _presenter.onPlaceSelected(_suggestionsAdapter.getPlace(position));
+
+                return true;
+            }
+        });
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(final String query) {
@@ -81,8 +96,11 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
 
             @Override
             public boolean onQueryTextChange(final String newText) {
-                _presenter.searchPlaces(newText);
-                return false;
+                if (newText != null && !"".equals(newText)) {
+                    _presenter.searchPlaces(newText);
+                }
+
+                return true;
             }
         });
     }
@@ -116,6 +134,7 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
     @Override
     public void onStop() {
         super.onStop();
+        this._presenter.unsubscribe();
     }
 
     @Override
@@ -133,6 +152,11 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
         _viewModel = new LocationEditViewModel(location);
         binding.setLocation(_viewModel);
         updateMapLocation();
+    }
+
+    @Override
+    public void setPlaces(final List<Place> places) {
+        _suggestionsAdapter.setPlaces(places);
     }
 
     private void updateMapLocation() {
@@ -160,6 +184,5 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
         _googleMap.getUiSettings().setZoomControlsEnabled(true);
         updateMapLocation();
     }
-
 
 }

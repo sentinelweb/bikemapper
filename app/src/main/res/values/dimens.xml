@@ -8,4 +8,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="default_button_size">48dp</dimen>
+    <dimen name="text_size">14dp</dimen>
+    <dimen name="suggestion_text_padding">4dp</dimen>
 </resources>

@@ -110,6 +110,7 @@ public class LocationListFragment extends Fragment implements LocationListView {
     @Override
     public void onStop() {
         super.onStop();
+        this._presenter.unsubscribe();
     }
 
     @Override

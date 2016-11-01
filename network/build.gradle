@@ -22,6 +22,9 @@ dependencies {
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    // RX Java/Android
+    compile "io.reactivex:rxjava:$rxjava_version"
+
     //compile 'com.jakewharton.timber:timber:4.1.2'
 
 
@@ -46,8 +49,6 @@ sourceSets {
 }
 
 test {
-    // TODO fix fields from gradle.properties
     systemProperty 'googlemaps.api.key', BM_GOOGLE_MAPS_API_KEY
-    print "google:" + BM_GOOGLE_MAPS_API_KEY
     systemProperty 'mapquest.api.key', BM_MAPQUEST_MAPS_API_KEY
 }
