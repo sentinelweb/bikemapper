@@ -23,7 +23,7 @@ public class MapquestDirectionsClientTest {
 
         @Override
         public String getApiKey() {
-            return System.getProperty("MAPQUEST_MAPS_API", "NO_KEY");
+            return System.getProperty("mapquest.api.key", "NO_KEY");
         }
     }
 

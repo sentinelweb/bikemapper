@@ -8,7 +8,9 @@ public class SavedLocation {
 
     private String name;
 
-    Location location;
+    private Location location;
+
+    private Address address;
 
     public SavedLocation(final long id, final String name, final double latitude, final double longitude) {
         this.id = id;
@@ -40,5 +42,11 @@ public class SavedLocation {
         this.name = name;
     }
 
+    public Address getAddress() {
+        return address;
+    }
 
+    public void setAddress(final Address address) {
+        this.address = address;
+    }
 }

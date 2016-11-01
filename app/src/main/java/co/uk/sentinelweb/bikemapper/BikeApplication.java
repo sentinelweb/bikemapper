@@ -2,6 +2,8 @@ package co.uk.sentinelweb.bikemapper;
 
 import android.app.Application;
 
+import co.uk.sentinelweb.bikemapper.di.BikeApplicationComponent;
+
 /**
  * Created by robert on 14/06/16.
  */

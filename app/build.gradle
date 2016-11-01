@@ -35,6 +35,9 @@ android {
 
         vectorDrawables.useSupportLibrary = true
 
+        buildConfigField "String", "GOOGLE_MAPS_KEY", '"'+BM_GOOGLE_MAPS_API_KEY+'"'
+       // buildConfigField "String", "MAPQUEST_KEY", BM_MAPQUEST_MAPS_API_KEY
+
         testApplicationId "co.uk.sentinelweb.bikemapper.test"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

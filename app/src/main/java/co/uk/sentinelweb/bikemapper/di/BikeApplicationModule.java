@@ -1,7 +1,8 @@
-package co.uk.sentinelweb.bikemapper;
+package co.uk.sentinelweb.bikemapper.di;
 
 import javax.inject.Singleton;
 
+import co.uk.sentinelweb.bikemapper.BikeApplication;
 import co.uk.sentinelweb.bikemapper.util.BikeApplicationPreferences;
 import dagger.Module;
 import dagger.Provides;

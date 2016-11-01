@@ -1,10 +1,14 @@
 package co.uk.sentinelweb.bikemapper.locationedit;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -13,7 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import co.uk.sentinelweb.bikemapper.core.model.Location;
+import co.uk.sentinelweb.bikemapper.R;
 import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.databinding.FragmentLocationEditBinding;
 import rx.Observable;
@@ -22,7 +26,7 @@ import rx.Observable;
  * A fragment to edit a location
  * <p>
  */
-public class LocationEditFragment extends Fragment implements LocationEditView, OnMapReadyCallback {
+public class LocationEditFragment extends Fragment implements LocationEditContract.View, OnMapReadyCallback {
 
     public static final String ARG_ID = "id";
 
@@ -30,7 +34,7 @@ public class LocationEditFragment extends Fragment implements LocationEditView, 
 
     LocationEditViewModel _viewModel;
 
-    private LocationEditPresenter _presenter;
+    private LocationEditContract.Presenter _presenter;
 
     private Observable<CharSequence> _editNameObservable;
 
@@ -41,6 +45,7 @@ public class LocationEditFragment extends Fragment implements LocationEditView, 
      * fragment (e.g. upon screen orientation changes).
      */
     public LocationEditFragment() {
+        setHasOptionsMenu(true);
     }
 
     public static LocationEditFragment newInstance(final Long id) {
@@ -55,6 +60,31 @@ public class LocationEditFragment extends Fragment implements LocationEditView, 
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(final Menu menu, final MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.edit_location, menu);
+        // Associate searchable configuration with the SearchView
+        final SearchManager searchManager =
+                (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+        final SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
+        //searchView.setSuggestionsAdapter();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(final String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(final String newText) {
+                _presenter.searchPlaces(newText);
+                return false;
+            }
+        });
     }
 
     @Override
@@ -89,7 +119,7 @@ public class LocationEditFragment extends Fragment implements LocationEditView, 
     }
 
     @Override
-    public void setPresenter(final LocationEditPresenter presenter) {
+    public void setPresenter(final LocationEditContract.Presenter presenter) {
         this._presenter = presenter;
     }
 
@@ -130,4 +160,6 @@ public class LocationEditFragment extends Fragment implements LocationEditView, 
         _googleMap.getUiSettings().setZoomControlsEnabled(true);
         updateMapLocation();
     }
+
+
 }

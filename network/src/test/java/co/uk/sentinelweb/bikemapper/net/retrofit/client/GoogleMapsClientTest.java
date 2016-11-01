@@ -21,14 +21,14 @@ public class GoogleMapsClientTest {
 
         @Override
         public String getApiKey() {
-            return System.getProperty("GOOGLE_MAPS_API", "NO_KEY");
+            return System.getProperty("googlemaps.api.key", "NO_KEY");
         }
     }
 
     @Test
     public void shouldTestGmapDirectionsResponse() {
         final GoogleMapsClient client = new GoogleMapsClient(new TestKeyProvider());
-        final Call<GoogleMapsDirectionsResponse> directionsResponse = client.service.getDirections("51.525493,-0.0822173", "51.5202109,-0.1070064", client._keyProvider.getApiKey(), "bicycling");
+        final Call<GoogleMapsDirectionsResponse> directionsResponse = client.getService().getDirections("51.525493,-0.0822173", "51.5202109,-0.1070064", client._keyProvider.getApiKey(), "bicycling");
         try {
             final Response<GoogleMapsDirectionsResponse> execute = directionsResponse.execute();
             final GoogleMapsDirectionsResponse body = execute.body();
@@ -42,7 +42,7 @@ public class GoogleMapsClientTest {
     @Test
     public void shouldTestGmapPlacessResponse() {
         final GoogleMapsClient client = new GoogleMapsClient(new TestKeyProvider());
-        final Call<GoogleMapsPlacesTextResponse> directionsResponse = client.service.getTextPlaces("pitfield", client._keyProvider.getApiKey());
+        final Call<GoogleMapsPlacesTextResponse> directionsResponse = client.getService().getTextPlaces("pitfield", client._keyProvider.getApiKey());
         try {
             final Response<GoogleMapsPlacesTextResponse> execute = directionsResponse.execute();
             final GoogleMapsPlacesTextResponse body = execute.body();

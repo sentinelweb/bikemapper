@@ -50,20 +50,6 @@ public class LocationEditActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(final Menu menu) {
-        final MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.edit_location, menu);
-        // Associate searchable configuration with the SearchView
-        final SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        final SearchView searchView =
-                (SearchView) menu.findItem(R.id.search).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        //searchView.setSuggestionsAdapter(new );
-        return true;
-    }
-
-    @Override
     protected void onPause() {
         super.onPause();
     }

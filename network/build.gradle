@@ -21,9 +21,6 @@ dependencies {
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-//    compile 'com.squareup.okhttp:logging-interceptor:2.7.5'
-//    compile 'com.squareup.okhttp:okhttp:2.7.5'
-//    compile 'com.squareup.okhttp:okhttp-urlconnection:2.7.5'
 
     //compile 'com.jakewharton.timber:timber:4.1.2'
 
@@ -38,17 +35,19 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
+
 apply plugin: 'kotlin'
 repositories {
     mavenCentral()
 }
+
 sourceSets {
     main.java.srcDirs += 'src/main/kotlin'
 }
 
 test {
     // TODO fix fields from gradle.properties
-    systemProperty 'GOOGLE_MAPS_API', BM_GOOGLE_MAPS_API_KEY
-    print "google:"+BM_GOOGLE_MAPS_API_KEY
-    systemProperty 'MAPQUEST_MAPS_API', BM_MAPQUEST_MAPS_API_KEY
+    systemProperty 'googlemaps.api.key', BM_GOOGLE_MAPS_API_KEY
+    print "google:" + BM_GOOGLE_MAPS_API_KEY
+    systemProperty 'mapquest.api.key', BM_MAPQUEST_MAPS_API_KEY
 }
