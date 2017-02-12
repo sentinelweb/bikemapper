@@ -6,29 +6,29 @@ import android.databinding.Bindable;
 import com.google.android.gms.maps.model.LatLng;
 
 import co.uk.sentinelweb.bikemapper.BR;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
-import co.uk.sentinelweb.bikemapper.decorator.LocationLatLngDecorator;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.util.converter.LocationConverter;
 
 /**
  * Created by robert on 15/06/16.
  */
 public class LocationEditViewModel extends BaseObservable {
 
-    private final SavedLocation _location;
-    private final LocationLatLngDecorator _locationLatLngDecorator;
+    private final SavedLocation _savedLocation;
+    private final LocationConverter _locationConverter;
 
-    public LocationEditViewModel(final SavedLocation location) {
-        this._location = location;
-        _locationLatLngDecorator = new LocationLatLngDecorator(location.getLocation());
+    public LocationEditViewModel(final SavedLocation savedLocation, final LocationConverter locationConverter) {
+        this._savedLocation = savedLocation;
+        _locationConverter = locationConverter;
     }
 
     @Bindable
     public String getName() {
-        return _location.getName();
+        return _savedLocation.getName();
     }
 
     public void setName(final String name) {
-        _location.setName(name);
+        _savedLocation.setName(name);
         notifyPropertyChanged(BR.name);
     }
 
@@ -37,6 +37,6 @@ public class LocationEditViewModel extends BaseObservable {
     }
 
     public LatLng getLatLng() {
-        return _locationLatLngDecorator.getLatLng();
+        return _locationConverter.toLatLng(_savedLocation.getLocation());
     }
 }

@@ -7,7 +7,7 @@ import javax.inject.Inject;
 
 import co.uk.sentinelweb.bikemapper.BikeApplication;
 import co.uk.sentinelweb.bikemapper.MVPContract;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.data.ILocationsRepository;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;

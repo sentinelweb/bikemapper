@@ -20,9 +20,10 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 
 import co.uk.sentinelweb.bikemapper.R;
-import co.uk.sentinelweb.bikemapper.core.model.Place;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.databinding.FragmentLocationEditBinding;
+import co.uk.sentinelweb.bikemapper.domain.model.Place;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.util.converter.LocationConverter;
 
 /**
  * A fragment to edit a location
@@ -37,6 +38,7 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
     LocationEditViewModel _viewModel;
 
     private LocationEditContract.Presenter _presenter;
+    LocationConverter _locationConverter;
 
     private GoogleMap _googleMap;
     private SearchPlaceSuggestionsAdapter _suggestionsAdapter;
@@ -60,6 +62,7 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
     @Override
     public void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        _locationConverter = new LocationConverter();// TODO remove
 
     }
 
@@ -149,7 +152,7 @@ public class LocationEditFragment extends Fragment implements LocationEditContra
 
     @Override
     public void setLocation(final SavedLocation location) {
-        _viewModel = new LocationEditViewModel(location);
+        _viewModel = new LocationEditViewModel(location, _locationConverter);
         binding.setLocation(_viewModel);
         updateMapLocation();
     }

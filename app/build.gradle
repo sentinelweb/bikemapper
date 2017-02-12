@@ -5,21 +5,24 @@ buildscript {
 
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath 'com.android.databinding:dataBinder:1.0-rc3'
-        classpath 'me.tatarka:gradle-retrolambda:3.2.3'
-        classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
+        //classpath 'com.android.databinding:dataBinder:1.0-rc3'
+        classpath 'me.tatarka:gradle-retrolambda:3.3.1'
+        //classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
         // https://github.com/canelmas/let : let - permissions annotation
         classpath 'com.canelmas.let:let-plugin:0.1.10'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
-    configurations.classpath.exclude group: 'com.android.tools.external.lombok'
+    //configurations.classpath.exclude group: 'com.android.tools.external.lombok'
 }
+
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'//!java8
 apply plugin: 'me.tatarka.retrolambda'//!java8
 apply plugin: 'let'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 24
     buildToolsVersion "25.0.0"
 
     defaultConfig {
@@ -28,7 +31,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-// re-ebable when gradle 2.3 comes out so databinding works
+// re-enable when gradle 2.3 comes out so databinding works
 //        jackOptions {
 //            enabled true
 //        }
@@ -96,20 +99,24 @@ android {
     }
 }
 
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':core')
+    compile project(':domain')
     compile project(':network')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+
+    compile "com.android.support:appcompat-v7:$android_support"
     compile 'com.google.android.gms:play-services-maps:8.4.0'//9.0.2
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.android.support:support-v4:23.4.0'
-    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile "com.android.support:design:$android_support"
+    compile "com.android.support:support-v4:$android_support"
+    compile "com.android.support:recyclerview-v7:$android_support"
 
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'de.greenrobot:eventbus:2.4.0'
     //https://github.com/greenrobot/EventBus
+    compile 'de.greenrobot:eventbus:2.4.0'
 
     // dagger 2.5
     compile 'com.google.dagger:dagger:2.5'
@@ -122,6 +129,12 @@ dependencies {
     // https://github.com/ReactiveX/RxAndroid
     compile 'io.reactivex:rxandroid:1.2.0'
 
+    // kotlin
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+
     // https://github.com/JakeWharton/RxBinding/
     //compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
 
@@ -131,7 +144,7 @@ dependencies {
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
 
     //UI test
-    androidTestCompile 'com.android.support:support-annotations:23.4.0'
+    androidTestCompile "com.android.support:support-annotations:$android_support"
     androidTestCompile 'com.android.support.test:rules:0.3'
     androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
     androidTestCompile 'org.mockito:mockito-core:1.10.19'

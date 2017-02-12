@@ -9,11 +9,10 @@ import java.util.List;
 import javax.inject.Inject;
 
 import co.uk.sentinelweb.bikemapper.BikeApplication;
-import co.uk.sentinelweb.bikemapper.core.model.Place;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.Place;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.data.ILocationsRepository;
-import co.uk.sentinelweb.bikemapper.net.interactor.IPlaceApiInteractor;
-import co.uk.sentinelweb.bikemapper.network.api.GoogleMapsApiKeyProvider;
+import co.uk.sentinelweb.bikemapper.net.place.google.interactor.IPlaceApiInteractor;
 import rx.Observer;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -99,7 +98,7 @@ public class LocationEditPresenter implements LocationEditContract.Presenter {
 
     public void searchPlaces(final String text) {
         _placeApiInteractor
-                .getPlaces(text, new GoogleMapsApiKeyProvider())
+                .getPlaces(text)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(_loadPlacesObserver);

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 
 /**
  * A fragment to edit a location
@@ -94,14 +94,14 @@ public class LocationTmplFragment extends Fragment implements LocationTmplView, 
     @Override
     public void setLocation(final SavedLocation location) {
         _viewModel = new LocationTmplViewModel(location);
-        //binding.setLocation(_viewModel);
+        //binding.fromAndroidLocation(_viewModel);
         //updateMapLocation();
     }
 
     private void updateMapLocation() {
 //        if (_googleMap != null && _viewModel != null) {
-//            _googleMap.addMarker(new MarkerOptions().position(_viewModel.getLatLng()).title(_viewModel.getName()));
-//            _googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(_viewModel.getLatLng(), 16));
+//            _googleMap.addMarker(new MarkerOptions().position(_viewModel.toLatLng()).title(_viewModel.getName()));
+//            _googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(_viewModel.toLatLng(), 16));
 //        }
     }
 

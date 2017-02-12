@@ -12,8 +12,8 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
-import co.uk.sentinelweb.bikemapper.core.model.Location;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.Location;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.locations.LocationListFragment.OnInteractionListener;
 
 /**

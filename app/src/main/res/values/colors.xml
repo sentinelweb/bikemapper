@@ -4,4 +4,14 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorFabIcon">@android:color/white</color>
+    <color name="colorErrorBackground">@color/red_700</color>
+    <color name="colorErrorText">@android:color/white</color>
+    <color name="colorDirectionsBackground">@android:color/white</color>
+    <color name="colorDirectionsText">@color/blue_grey_700</color>
+    <color name="colorRoute">@color/blue_400</color>
+    <color name="colorFrom">@color/blue_600</color>
+    <color name="colorCurrent">@color/purple_500</color>
+    <color name="colorCurrentEdge">@color/purple_600</color>
+    <color name="colorTo">@color/green_500</color>
+    <color name="colorToEdge">@color/green_600</color>
 </resources>

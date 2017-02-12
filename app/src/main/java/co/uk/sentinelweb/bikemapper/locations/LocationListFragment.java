@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 
 /**
  * A fragment representing a list of Items.

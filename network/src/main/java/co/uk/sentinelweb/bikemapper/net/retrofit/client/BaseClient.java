@@ -30,4 +30,8 @@ public class BaseClient<T> {
 
         return retrofit.create(serviceClass);
     }
+
+    public IApiKeyProvider getKeyProvider() {
+        return _keyProvider;
+    }
 }

@@ -23,9 +23,15 @@ import retrofit2.http.Query;
  */
 public interface GoogleMapsService {
 
+    /**
+     * <a href="https://developers.google.com/maps/documentation/directions/intro">Google directions api</a>
+     */
     @GET("directions/json")
     Call<GoogleMapsDirectionsResponse> getDirections(@Query("origin") String origin, @Query("destination") String destination, @Query("key") String key, @Query(value = "mode") String mode);
 
+    /**
+     * <a href="https://developers.google.com/places/web-service/">Google places api</a>
+     */
     @GET("place/textsearch/json")
     Call<GoogleMapsPlacesTextResponse> getTextPlaces(@Query("query") String query, @Query("key") String key);
 

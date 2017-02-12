@@ -1,7 +1,7 @@
 package co.uk.sentinelweb.bikemapper.template;
 
 import co.uk.sentinelweb.bikemapper.MVPContract;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 
 /**
  * Created by robert on 14/06/16.

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.uk.sentinelweb.bikemapper.R;
-import co.uk.sentinelweb.bikemapper.core.model.Place;
+import co.uk.sentinelweb.bikemapper.domain.model.Place;
 
 public class SearchPlaceSuggestionsAdapter extends CursorAdapter {
 

@@ -1,6 +1,6 @@
 package co.uk.sentinelweb.bikemapper.data;
 
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 import rx.Observable;
 
 /**

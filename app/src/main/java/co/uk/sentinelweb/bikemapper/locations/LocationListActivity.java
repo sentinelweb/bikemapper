@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 
 import co.uk.sentinelweb.bikemapper.BaseActivity;
 import co.uk.sentinelweb.bikemapper.R;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 import co.uk.sentinelweb.bikemapper.locationedit.LocationEditActivity;
 import co.uk.sentinelweb.bikemapper.locationmap.LocationMapActivity;
 import co.uk.sentinelweb.bikemapper.util.ViewServer;

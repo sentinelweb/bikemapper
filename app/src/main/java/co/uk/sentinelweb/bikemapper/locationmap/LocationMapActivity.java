@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 
+import javax.inject.Inject;
+
 import co.uk.sentinelweb.bikemapper.BaseActivity;
 import co.uk.sentinelweb.bikemapper.R;
 
@@ -13,8 +15,14 @@ public class LocationMapActivity extends BaseActivity {
     private static final String ARG_ID = "id";
 
     public static final String LOCATION_MAP_FRAGMENT_TAG = "locationMapFragment";
+
     private LocationMapFragment _locationMapFragment;
-    private LocationMapPresenter _locationMapPresenter;
+
+    @Inject
+    protected LocationMapContract.Presenter _locationMapPresenter;
+
+    @Inject
+    protected LocationMapContract.View _locationMapView;
 
     public static Intent getLaunchIntent(final Context c, final Long locationId) {
         final Intent i = new Intent(c, LocationMapActivity.class);
@@ -35,14 +43,17 @@ public class LocationMapActivity extends BaseActivity {
             final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.main_content, _locationMapFragment, LOCATION_MAP_FRAGMENT_TAG);
             fragmentTransaction.commit();
-        } else {
+        } else if (!_locationMapFragment.isAdded()) {
             final Bundle args = new Bundle();
             args.putLong(LocationMapFragment.ARG_ID, id);
             _locationMapFragment.setArguments(args);
         }
-        _locationMapPresenter = new LocationMapPresenter(id, this, _locationMapFragment);
-        _locationMapFragment.setPresenter(_locationMapPresenter);
-
+        // BikeApplicationComponent.Injector.getComponent(this).inject(this);
+        // builds.injects dependencies
+        new LocationMapComponent.Injector().createComponent(this, _locationMapFragment)
+                .inject(this);
+        _locationMapView.setPresenter(_locationMapPresenter);
+        _locationMapPresenter.setData(id);
     }
 
     @Override

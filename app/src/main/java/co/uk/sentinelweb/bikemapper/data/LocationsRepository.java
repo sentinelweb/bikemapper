@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 
 import javax.inject.Inject;
 
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 import rx.Observable;
 
 /**

@@ -3,11 +3,8 @@ package co.uk.sentinelweb.bikemapper.template;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
-import com.google.android.gms.maps.model.LatLng;
-
 import co.uk.sentinelweb.bikemapper.BR;
-import co.uk.sentinelweb.bikemapper.core.model.SavedLocation;
-import co.uk.sentinelweb.bikemapper.decorator.LocationLatLngDecorator;
+import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
 
 /**
  * Created by robert on 15/06/16.
@@ -34,7 +31,7 @@ public class LocationTmplViewModel extends BaseObservable {
         setName(s.toString());
     }
 
-    public LatLng getLatLng() {
-        return new LocationLatLngDecorator(location.getLocation()).getLatLng();
-    }
+//    public LatLng getLatLng() {
+//        return new LocationConverter(location.getLocation()).toLatLng();
+//    }
 }

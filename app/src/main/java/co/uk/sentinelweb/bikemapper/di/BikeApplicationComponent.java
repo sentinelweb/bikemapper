@@ -2,15 +2,22 @@ package co.uk.sentinelweb.bikemapper.di;
 
 import android.content.Context;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import co.uk.sentinelweb.bikemapper.BikeApplication;
 import co.uk.sentinelweb.bikemapper.data.DataModule;
+import co.uk.sentinelweb.bikemapper.data.ILocationDataSource;
+import co.uk.sentinelweb.bikemapper.data.ILocationsRepository;
 import co.uk.sentinelweb.bikemapper.locationedit.LocationEditPresenter;
-import co.uk.sentinelweb.bikemapper.locationmap.LocationMapPresenter;
 import co.uk.sentinelweb.bikemapper.locations.LocationListPresenter;
+import co.uk.sentinelweb.bikemapper.net.directions.google.interactor.IDirectionsInteractor;
 import co.uk.sentinelweb.bikemapper.network.NetworkModule;
+import co.uk.sentinelweb.bikemapper.sensors.LocationHandler;
 import co.uk.sentinelweb.bikemapper.template.LocationTmplPresenter;
+import co.uk.sentinelweb.bikemapper.util.BikeApplicationPreferences;
+import co.uk.sentinelweb.bikemapper.util.context.IWrappedContext;
+import co.uk.sentinelweb.bikemapper.util.rx.ISchedulers;
 import dagger.Component;
 
 /**
@@ -19,22 +26,31 @@ import dagger.Component;
 @Singleton
 @Component(modules = {BikeApplicationModule.class, DataModule.class, NetworkModule.class})
 public interface BikeApplicationComponent {
-    //ILocationsRepository provideLocationsRepository();
 
-    //SharedPreferences providePreferences(final BikeApplication app);
+    ILocationsRepository provideLocationsRepository();
 
-    @Singleton
-    public void plus(DataModule module);
+    BikeApplication provideApplication();
 
-    @Singleton
-    public void plus(NetworkModule module);
+    BikeApplicationPreferences providePreferences();
+
+    LocationHandler provideLocationHandler();
+
+    ISchedulers provideSchedulers();
+
+    @Named(DataModule.NAMED_DATASOURCE_MOCK)
+    ILocationDataSource provideMockLocationsDataSource();
+
+    @Named(DataModule.NAMED_DATASOURCE_PREFS)
+    ILocationDataSource providePrefLocationsDataSource();
+
+    IDirectionsInteractor provideDirectionsInteractor();
+
+    IWrappedContext provideWrappedContext();
 
     // presenters
     public void inject(LocationListPresenter fragment);
 
     public void inject(LocationEditPresenter fragment);
-
-    public void inject(LocationMapPresenter fragment);
 
     public void inject(LocationTmplPresenter fragment);// unused
 
@@ -44,8 +60,9 @@ public interface BikeApplicationComponent {
         }
 
         public BikeApplicationComponent createComponent(final BikeApplication c) {
-            final BikeApplicationComponent build = DaggerBikeApplicationComponent.builder().
-                    dataModule(new DataModule(c))
+            final BikeApplicationComponent build = DaggerBikeApplicationComponent.builder()
+                    .dataModule(new DataModule(c))
+                    .bikeApplicationModule(new BikeApplicationModule(c))
                     .networkModule(new NetworkModule()).build();
             return build;
         }
