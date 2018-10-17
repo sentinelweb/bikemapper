@@ -1,1 +1,1 @@
-include  ':core', ':network', ':app' //':legacy',
+include  ':core', ':network', ':domain', ':app' //':legacy',

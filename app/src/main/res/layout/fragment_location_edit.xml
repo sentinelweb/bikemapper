@@ -16,11 +16,12 @@
             android:id="@+id/progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentEnd="true"/>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@android:style/TextAppearance.DeviceDefault.Large"
-                    android:text="@{location.name}"/>
+                    android:text="@{location::name}"/>
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/edit_name_layout"
@@ -45,8 +46,8 @@
                         android:imeOptions="actionNext"
                         android:inputType="text"
                         android:singleLine="true"
-                        android:text="@{location.name}"
-                        android:onTextChanged="@{location.onNameChanged}"
+                        android:text="@{location::name}"
+                        android:onTextChanged="@{location::onNameChanged}"
                     />
 
                 </android.support.design.widget.TextInputLayout>
@@ -56,9 +57,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     app:liteMode="true"
-                    app:mapType="normal">
+                    app:mapType="normal"
+                    />
 
-                </com.google.android.gms.maps.MapView>
             </LinearLayout>
 
         </ScrollView>
