@@ -29,7 +29,7 @@ import co.uk.sentinelweb.bikemapper.databinding.FragmentLocationMapBinding;
 
 /**
  * A fragment to edit a location
- * <p>
+ *
  */
 public class LocationMapFragment extends Fragment implements LocationMapContract.View, OnMapReadyCallback {
 
@@ -228,18 +228,7 @@ public class LocationMapFragment extends Fragment implements LocationMapContract
     @AskPermission({Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
     public void onMapReady(final GoogleMap googleMap) throws SecurityException {
         _googleMap = googleMap;
-        _binding.map.onResume();
         _googleMap.getUiSettings().setAllGesturesEnabled(true);
         _googleMap.setMyLocationEnabled(false);
-//        _googleMap.getUiSettings().setMapToolbarEnabled(false);
-//        _googleMap.getUiSettings().setIndoorLevelPickerEnabled(false);
-//        _googleMap.getUiSettings().setTiltGesturesEnabled(false);
-//        _googleMap.getUiSettings().setRotateGesturesEnabled(false);
-//        _googleMap.getUiSettings().setZoomControlsEnabled(true);
-
-        _googleMap.setOnMapLoadedCallback(() -> {
-            //Snackbar.make(binding.container, "map loaded", Snackbar.LENGTH_LONG).show();
-            _binding.map.invalidate();
-        });
     }
 }
