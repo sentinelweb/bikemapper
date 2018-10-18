@@ -154,7 +154,7 @@ public class LocationMapPresenter implements LocationMapContract.Presenter {
 
                     @Override
                     public void onNext(final List<Route> routes) {
-                        if (routes.size() > 0) {
+                        if (routes!=null && routes.size() > 0) {
                             _locationMapModelAdapter.setRoute(routes.get(0), _wrappedContext.getColor(R.color.colorRoute));
                         }
                     }

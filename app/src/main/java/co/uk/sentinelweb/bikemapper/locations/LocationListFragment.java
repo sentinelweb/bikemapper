@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
 import co.uk.sentinelweb.bikemapper.domain.model.SavedLocation;
@@ -30,11 +30,11 @@ public class LocationListFragment extends Fragment implements LocationListView {
 
     private static final String ARG_SCENARIO = "scenario";
 
-    @Bind(R.id.list)
+    @BindView(R.id.list)
     protected RecyclerView _recyclerView;
-    @Bind(R.id.progress)
+    @BindView(R.id.progress)
     protected ProgressBar _progress;
-    @Bind(R.id.container)
+    @BindView(R.id.container)
     protected RelativeLayout _container;
 
     private String scenario;

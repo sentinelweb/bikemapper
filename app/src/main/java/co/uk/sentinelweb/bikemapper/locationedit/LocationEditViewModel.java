@@ -39,4 +39,8 @@ public class LocationEditViewModel extends BaseObservable {
     public LatLng getLatLng() {
         return _locationConverter.toLatLng(_savedLocation.getLocation());
     }
+
+    public SavedLocation getSavedLocation() {
+        return _savedLocation;
+    }
 }

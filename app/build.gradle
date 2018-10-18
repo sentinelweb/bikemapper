@@ -4,9 +4,9 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         //classpath 'com.android.databinding:dataBinder:1.0-rc3'
-        classpath 'me.tatarka:gradle-retrolambda:3.3.1'
+        //classpath 'me.tatarka:gradle-retrolambda:3.3.1'
         //classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
         // https://github.com/canelmas/let : let - permissions annotation
         classpath 'com.canelmas.let:let-plugin:0.1.10'
@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'com.android.application'
 //apply plugin: 'com.neenbedankt.android-apt'//!java8
-apply plugin: 'me.tatarka.retrolambda'//!java8
+//apply plugin: 'me.tatarka.retrolambda'//!java8
 apply plugin: 'let'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -64,7 +64,17 @@ android {
         javaMaxHeapSize "6000M"
     }
 
+    signingConfigs {
+        debug {
+            storeFile file("../debug.keystore")
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -110,12 +120,13 @@ dependencies {
     compile project(':network')
 
     compile "com.android.support:appcompat-v7:$android_support"
-    compile 'com.google.android.gms:play-services-maps:8.4.0'//9.0.2
+    compile 'com.google.android.gms:play-services-maps:8.4.0' //9.0.2
     compile "com.android.support:design:$android_support"
     compile "com.android.support:support-v4:$android_support"
     compile "com.android.support:recyclerview-v7:$android_support"
 
-    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
     //https://github.com/greenrobot/EventBus
     compile 'de.greenrobot:eventbus:2.4.0'
 

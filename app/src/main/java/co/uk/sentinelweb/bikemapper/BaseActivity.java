@@ -13,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.util.ViewServer;
 
@@ -22,15 +22,15 @@ import co.uk.sentinelweb.bikemapper.util.ViewServer;
  */
 public abstract class BaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    @Bind(R.id.nav_view)
+    @BindView(R.id.nav_view)
     protected NavigationView navigationView;
-    @Bind(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     protected DrawerLayout drawer;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
-    @Bind(R.id.main_content)
+    @BindView(R.id.main_content)
     protected ViewGroup mainContent;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     protected FloatingActionButton fab;
 
     @Override

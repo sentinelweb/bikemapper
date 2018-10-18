@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import co.uk.sentinelweb.bikemapper.R;
 import co.uk.sentinelweb.bikemapper.domain.model.Location;
@@ -67,11 +67,11 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View _view;
-        @Bind(R.id.id)
+        @BindView(R.id.id)
         public TextView _idView;
-        @Bind(R.id.content)
+        @BindView(R.id.content)
         public TextView _textView;
-        @Bind(R.id.bikeButton)
+        @BindView(R.id.bikeButton)
         public ImageView _bikeButton;
 
         private SavedLocation mItem;
